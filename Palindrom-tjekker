@@ -1,0 +1,21 @@
+// Funktionen `palindrome` tager en streng `str` som input og returnerer `true`, hvis strengen er et palindrom, og `false` ellers.
+function palindrome(str) {
+  // Fjerner alle ikke-alfanumeriske tegn fra strengen og omdanner den til små bogstaver for at sikre ensartet sammenligning.
+  var cleanedStr = str.replace(/[\W_]/g, '').toLowerCase();
+
+  // Omdanner den rensede streng til et array af tegn, reverserer rækkefølgen af tegnene, og samler dem derefter tilbage til en streng.
+  // Dette skaber en omvendt version af den oprindelige, rensede streng.
+  var reversedStr = cleanedStr.split('').reverse().join('');
+  
+  // Sammenligner den oprindelige, rensede streng med den omvendte streng.
+  // Returnerer `true`, hvis de er identiske (hvilket indikerer et palindrom), og `false` ellers.
+  return cleanedStr === reversedStr;
+}
+
+// Test af funktionen med forskellige strenge for at se, om den korrekt identificerer palindromer.
+console.log(palindrome("eye"));          // true
+console.log(palindrome("RaceCar"));      // true
+console.log(palindrome("race CAR"));     // true
+console.log(palindrome("2A3*3a2"));      // true
+console.log(palindrome("2A3 3a2"));      // true
+console.log(palindrome("2_A3*3#A2"));    // true
