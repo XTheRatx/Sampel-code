@@ -19,3 +19,5 @@ console.log(palindrome("race CAR"));     // true
 console.log(palindrome("2A3*3a2"));      // true
 console.log(palindrome("2A3 3a2"));      // true
 console.log(palindrome("2_A3*3#A2"));    // true
+console.log(palindrome("Anne"));    // false
+console.log(palindrome("Anna"));    // true
